@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ad Banner</title>
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<style>
+body {
+margin: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: #f8f8f8;
+}
+.ad-container {
+position: relative;
+width: 320px;
+height: 50px;
+}
+.ad-image {
+width: 100%;
+height: 100%;
+display: block;
+}
+.ad-slot {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: transparent;
+}
+</style>
+</head>
+<body>
+<div class="ad-container">
+<img src="https://i.postimg.cc/NGbvJ1B8/temp-Imagelj-Hen-F.avif" alt="Ad Banner" class="ad-image">
+<div id="gpt-passback" class="ad-slot"></div>
+</div>
+
+<script>
+window.googletag = window.googletag || { cmd: [] };
+googletag.cmd.push(function () {
+googletag.defineSlot('/222812108/Mobile/Mobile-5', [320, 50], 'gpt-passback')
+.addService(googletag.pubads());
+googletag.pubads().set('forceSafeFrame', true); // Use SafeFrame
+googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+const iframe = document.querySelector('#gpt-passback iframe');
+if (iframe) {
+iframe.onload = function () {
+const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+const anchor = iframeDoc.querySelector('a');
+if (anchor) {
+anchor.setAttribute('href', 'https://www.acchelp.in/');
+}
+};
+}
+});
+googletag.enableServices();
+googletag.display('gpt-passback');
+});
+</script>
+</body>
+</html>

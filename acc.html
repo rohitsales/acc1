@@ -45,7 +45,7 @@ window.googletag = window.googletag || { cmd: [] };
 googletag.cmd.push(function () {
 googletag.defineSlot('/222812108/Mobile/Mobile-5', [320, 50], 'gpt-passback')
 .addService(googletag.pubads());
-googletag.pubads().set('forceSafeFrame', true); // Use SafeFrame
+googletag.pubads().set('forceSafeFrame', true); //
 googletag.pubads().addEventListener('slotRenderEnded', function(event) {
 const iframe = document.querySelector('#gpt-passback iframe');
 if (iframe) {
